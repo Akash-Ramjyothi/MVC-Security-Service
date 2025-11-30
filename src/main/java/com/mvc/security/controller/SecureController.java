@@ -11,4 +11,10 @@ public class SecureController {
 
         return "home";
     }
+
+    @GetMapping("/leaders")
+    public String showLeaders() {
+
+        return "leaders";
+    }
 }
