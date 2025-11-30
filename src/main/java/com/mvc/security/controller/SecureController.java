@@ -17,4 +17,10 @@ public class SecureController {
 
         return "leaders";
     }
+
+    @GetMapping("/systems")
+    public String showSystems() {
+
+        return "systems";
+    }
 }
