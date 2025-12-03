@@ -14,11 +14,14 @@
 
 <hr>
 
+<!--User name components-->
 <p>
     User: <span sec:authentication="principal.username"></span>
     <br><br>
     Role(s): <span sec:authentication="principal.authorities"></span>
 </p>
+
+<!--Role based components-->
 
 <div sec:authorize="hasRole('MANAGER')">
 
