@@ -16,7 +16,11 @@ public class SecurityConfig {
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
 
         JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+
         jdbcUserDetailsManager.setUsersByUsernameQuery("select user_id, pw, active from members where user_id=?");
+        jdbcUserDetailsManager.setGroupAuthoritiesByUsernameQuery("select user_id, role from roles where user_id=?");
+        System.out.println("🚝 jdbcUserDetailsManager = " + jdbcUserDetailsManager);
+
         return jdbcUserDetailsManager;
     }
 
